@@ -4,8 +4,11 @@
 .submit-btn {
   width: 100%;
 }
-.shorten-title {
+.shorten-container {
   margin-top: 20px;
+  font-size: large;
+  text-align: center;
+  height: 100px;
 }
 .formError {
   color: red;

@@ -15,8 +15,6 @@ class Landing extends Component {
       apiError: "",
       showApiError: false,
       showLoading: false,
-      exUrl:
-        "https://www.amazon.com/Apple-iPhone-GSM-Unlocked-5-8/dp/B075QMZH2L",
       exShortUrl: constants.baseUrl
     };
     this.handleUserInput = this.handleUserInput.bind(this);
@@ -93,12 +91,6 @@ class Landing extends Component {
         <div>
           <h5> Original Url</h5>
         </div>
-        <div>
-          Ex:{" "}
-          <a target="_blank" href={this.state.exUrl}>
-            {this.state.exUrl}
-          </a>
-        </div>
         <input
           name="originalUrl"
           field="originalUrl"
@@ -114,7 +106,13 @@ class Landing extends Component {
         <div>
           <h5>*Base Url</h5>
         </div>
-
+        <div className="shorten-imp">
+          [* Here base url has the default value{" "}
+          <a target="_blank" href={this.state.exShortUrl}>
+            {this.state.exShortUrl}
+          </a>{" "}
+          .This will change based on domain name]
+        </div>
         <input
           field="baseUrl"
           name="baseUrl"
@@ -128,20 +126,15 @@ class Landing extends Component {
           <div className="shorten-error">{this.state.apiError}</div>
         )}
         {this.state.showShortenUrl && (
-          <div className="shorten-title">
-            Shortened Url is ->{` `}
+          <div className="shorten-container">
+            <h4>
+              Shortened Url is {` `}
+            </h4>
             <a target="_blank" href={this.state.shortenUrl}>
               {this.state.shortenUrl}
             </a>
           </div>
         )}
-        <div className="shorten-imp">
-          [* Here base url has the default value{" "}
-          <a target="_blank" href={this.state.exShortUrl}>
-            {this.state.exShortUrl}
-          </a>{" "}
-          .This will change based on domain name]
-        </div>
       </div>
     );
   }
